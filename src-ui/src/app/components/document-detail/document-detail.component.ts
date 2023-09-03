@@ -71,6 +71,7 @@ enum DocumentDetailNavIDs {
   Preview = 4,
   Notes = 5,
   Permissions = 6,
+  Enhance = 7,
 }
 
 @Component({
@@ -119,6 +120,7 @@ export class DocumentDetailComponent
     archive_serial_number: new FormControl(),
     tags: new FormControl([]),
     permissions_form: new FormControl(null),
+    enhance: new FormControl(null),
   })
 
   previewCurrentPage: number = 1
@@ -323,6 +325,7 @@ export class DocumentDetailComponent
               owner: doc.owner,
               set_permissions: doc.permissions,
             },
+            enhance: doc.content,
           })
 
           this.isDirty$ = dirtyCheck(
@@ -735,6 +738,10 @@ export class DocumentDetailComponent
     if ('Enter' == event.key) {
       this.password = (event.target as HTMLInputElement).value
     }
+  }
+
+  get showEnhance(): boolean {
+    return true
   }
 
   get showPermissions(): boolean {

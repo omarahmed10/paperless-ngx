@@ -186,6 +186,15 @@
                         </div>
                     </ng-template>
                 </li>
+
+                <li [ngbNavItem]="DocumentDetailNavIDs.Enhance" *ngIf="showEnhance">
+                    <a ngbNavLink i18n>Enhance</a>
+                    <ng-template ngbNavContent>
+                        <div class="mb-3">
+                            <app-enhance-form formControlName='enhance'></app-enhance-form>
+                        </div>
+                    </ng-template>
+                </li>
             </ul>
 
             <div [ngbNavOutlet]="nav" class="mt-2"></div>
