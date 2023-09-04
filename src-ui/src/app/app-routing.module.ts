@@ -21,6 +21,7 @@ import {
   PermissionAction,
   PermissionType,
 } from './services/permissions.service'
+import { DocumentEnhanceComponent } from './components/document-enhance/document-enhance.component'
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -57,6 +58,17 @@ export const routes: Routes = [
       {
         path: 'documents/:id',
         component: DocumentDetailComponent,
+        canActivate: [PermissionsGuard],
+        data: {
+          requiredPermission: {
+            action: PermissionAction.View,
+            type: PermissionType.Document,
+          },
+        },
+      },
+      {
+        path: 'documents/:id/enhance',
+        component: DocumentEnhanceComponent,
         canActivate: [PermissionsGuard],
         data: {
           requiredPermission: {

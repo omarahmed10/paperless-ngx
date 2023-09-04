@@ -48,6 +48,11 @@
                 <use xlink:href="assets/bootstrap-icons.svg#pencil"/>
               </svg>&nbsp;<span class="d-none d-md-inline" i18n>Edit</span>
             </a>
+            <a routerLink="/documents/{{document.id}}/enhance" class="btn btn-sm btn-outline-secondary" *appIfPermissions="{ action: PermissionAction.Change, type: PermissionType.Document }">
+              <svg class="sidebaricon" fill="currentColor" class="sidebaricon">
+                <use xlink:href="assets/bootstrap-icons.svg#magic"/>
+              </svg>&nbsp;<span class="d-none d-md-inline" i18n>Enhance</span>
+            </a>
             <a class="btn btn-sm btn-outline-secondary" target="_blank" [href]="previewUrl"
             [ngbPopover]="previewContent" [popoverTitle]="document.title | documentTitle"
             autoClose="true" popoverClass="shadow popover-preview" (mouseenter)="mouseEnterPreview()" (mouseleave)="mouseLeavePreview()" #popover="ngbPopover">

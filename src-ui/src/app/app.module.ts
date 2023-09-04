@@ -118,7 +118,8 @@ import localeSr from '@angular/common/locales/sr'
 import localeSv from '@angular/common/locales/sv'
 import localeTr from '@angular/common/locales/tr'
 import localeUk from '@angular/common/locales/uk'
-import localeZh from '@angular/common/locales/zh'
+import localeZh from '@angular/common/locales/zh';
+import { DocumentEnhanceComponent } from './components/document-enhance/document-enhance.component'
 
 registerLocaleData(localeAr)
 registerLocaleData(localeBe)
@@ -225,6 +226,7 @@ function initializeApp(settings: SettingsService) {
     UsernamePipe,
     LogoComponent,
     IsNumberPipe,
+    DocumentEnhanceComponent,
   ],
   imports: [
     BrowserModule,
